@@ -1,22 +1,34 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-const Header = () => {
-    const user = null
+import { connect, useSelector } from 'react-redux';
+const Header = ({
+    /*user*/
+}) => {
+    const user = useSelector(state => state.user); // lo mismo que connect en hooks
+
     return (
         <header>
             <NavLink to='/' exact>Home</NavLink>
-                {/* <div className="userZone">
+            {user?._id
+                ?
+                <div className="userZone">
                     <NavLink to='/profile' exact>{user.email}</NavLink>
+                    <a href="#" onClick={}>Logout</a>
                 </div>
-                : */}
+                :
                 <div className="guestZone">
                     <NavLink to='/login' exact>Login</NavLink>
                     <NavLink to='/signup' exact>Sign up</NavLink>
                 </div>
-
+            }
         </header>
     )
 }
-
-export default Header
+// const mapStateToProps = (state) => {
+//     return {
+//         pepito: state.user
+//     }
+// }
+// export default connect(mapStateToProps)(Header)
+export default Header;
