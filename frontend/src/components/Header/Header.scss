@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(192, 255, 252);
+    align-items: center;
+    a {
+        all: unset;
+        padding: 1em;
+        cursor: pointer;
+        transition: 0.5s all;
+        &:hover {
+            background-color: rgb(0, 196, 186);
+        }
+        &.active {
+            background-color: rgb(0, 196, 186);
+        }
+    }
+}
