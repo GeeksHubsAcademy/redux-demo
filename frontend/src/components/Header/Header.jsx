@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import { connect, useSelector } from 'react-redux';
+import { logout } from '../../redux/actions';
 const Header = ({
     /*user*/
 }) => {
@@ -14,7 +15,7 @@ const Header = ({
                 ?
                 <div className="userZone">
                     <NavLink to='/profile' exact>{user.email}</NavLink>
-                    <a href="#" onClick={}>Logout</a>
+                    <a href="#" onClick={logout}>Logout</a>
                 </div>
                 :
                 <div className="guestZone">
