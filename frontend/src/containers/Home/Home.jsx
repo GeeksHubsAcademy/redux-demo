@@ -11,7 +11,7 @@ class Home extends React.Component {
         return (
             <div className="movies">
                 {this.props.movies?.map(movie =><MovieItem
-                 key={movie._id} movie={movie}/>)}
+                 key={movie._id} movie={movie} />)}
             </div>
         )
     }
