@@ -1,0 +1,2 @@
+export const GET_ALL_MOVIES = 'GET_ALL_MOVIES';
+export const ADD_MOVIE_TO_CART = 'ADD_MOVIE_TO_CART';

@@ -1,5 +1,5 @@
 import React from 'react'
-import { signup } from '../../redux/actions.js'
+import { signup } from '../../redux/actions/users'
 const Signup = () => {
     const onSubmit = (event) => {
         event.preventDefault();

@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import { connect, useSelector } from 'react-redux';
-import { logout } from '../../redux/actions';
-const Header = ({
-    /*user*/
-}) => {
-    const user = useSelector(state => state.user); // lo mismo que connect en hooks
-
+import { useSelector } from 'react-redux';
+import { logout } from '../../redux/actions/users';
+import { Badge } from 'antd';
+import { ShoppingCartOutlined } from '@ant-design/icons';
+const Header = () => {
+    const user = useSelector(state => state.users.user); // lo mismo que connect en hooks
+    const cart = useSelector(state => state.movies.cart);
     return (
         <header>
             <NavLink to='/' exact>Home</NavLink>
@@ -15,6 +15,9 @@ const Header = ({
                 ?
                 <div className="userZone">
                     <NavLink to='/profile' exact>{user.email}</NavLink>
+                    <Badge count={cart.length}>
+                        <ShoppingCartOutlined className="shopping-icon" />
+                    </Badge>
                     <a href="#" onClick={logout}>Logout</a>
                 </div>
                 :

@@ -1,14 +1,17 @@
+import { LOGIN, SET_USER, LOGOUT } from "../types/users"
+
 const initialState = {
     user: {},
 }
-export default function reducer(state = initialState, action) {
+export default function usersReducer(state = initialState, action) {
     switch (action.type) {
-        case 'LOGIN':
+        case LOGIN:
+        case SET_USER:
             return {
                 ...state,
                 user: action.payload
             }
-        case 'LOGOUT':
+        case LOGOUT:
             return {
                 ...state,
                 user: {}

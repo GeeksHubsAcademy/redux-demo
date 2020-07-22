@@ -71,6 +71,9 @@ const UserController = {
                 error
             });
         }
+    },
+    getInfo(req, res) {
+        res.send(req.user);
     }
 }
 
