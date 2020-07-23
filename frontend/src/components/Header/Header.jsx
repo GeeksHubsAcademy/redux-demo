@@ -15,9 +15,11 @@ const Header = () => {
                 ?
                 <div className="userZone">
                     <NavLink to='/profile' exact>{user.name || user.email}</NavLink>
-                    <Badge count={cart.length}>
-                        <ShoppingCartOutlined className="shopping-icon" />
-                    </Badge>
+                    <NavLink to='/cart'>
+                        <Badge count={cart.length}>
+                            <ShoppingCartOutlined className="shopping-icon" />
+                        </Badge>
+                    </NavLink>
                     <a href="#" onClick={logout}>Logout</a>
                 </div>
                 :

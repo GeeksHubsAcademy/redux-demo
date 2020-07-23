@@ -2,7 +2,8 @@ import axios from 'axios';
 import store from '../store.js';
 import {
     GET_ALL_MOVIES,
-    ADD_MOVIE_TO_CART
+    ADD_MOVIE_TO_CART,
+    ADD_POPCORN
 } from '../types/movies.js';
 
 export const getAllMovies = async() => {
@@ -26,4 +27,9 @@ export const addMovieToCart = (movie) => {
         type: ADD_MOVIE_TO_CART,
         payload: [...cart, movie]
     })
+}
+export const addPopcorn = () => {
+    store.dispatch({
+        type: ADD_POPCORN
+    });
 }

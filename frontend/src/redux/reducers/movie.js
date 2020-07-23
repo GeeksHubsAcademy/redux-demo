@@ -1,11 +1,16 @@
 import {
     GET_ALL_MOVIES,
-    ADD_MOVIE_TO_CART
+    ADD_MOVIE_TO_CART,
+    ADD_POPCORN
 } from "../types/movies"
 
 const initialState = {
     movies: [],
-    cart: []
+    cart: [],
+    extras: {
+        popcorn: 0,
+        beverages: []
+    }
 }
 export default function moviesReducer(state = initialState, action) {
     switch (action.type) {
@@ -18,6 +23,14 @@ export default function moviesReducer(state = initialState, action) {
             return {
                 ...state,
                 cart: action.payload
+            }
+        case ADD_POPCORN:
+            return {
+                ...state,
+                extras: {
+                    ...state.extras,
+                    popcorn: state.extras.popcorn + 1
+                }
             }
         default:
             return state

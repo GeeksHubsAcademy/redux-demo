@@ -8,6 +8,7 @@ import HomeFunction from './containers/Home/HomeFunction';
 import Login from './containers/Login/Login';
 import Signup from './containers/Signup/Signup';
 import {getInfo} from './redux/actions/users'
+import Cart from './containers/Cart/Cart';
 function App() {
   useEffect(() => {
     const token = localStorage.getItem('authToken');
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' component={HomeFunction} exact />
         <Route path='/login' component={Login} exact />
         <Route path='/signup' component={Signup} exact />
+        <Route path='/cart' component={Cart} exact />
       </Switch>
     </BrowserRouter>
   );
